@@ -27,18 +27,18 @@ pipeline {
        }
     stage('Docker Image Creation') {
        steps {
-         sh 'docker build -t chinmaysalkar99/insurance-project:latest .'
+         sh 'docker build -t chimaysalkar99/insurance-project:latest .'
              }
        } 
       stage('Docker Login') {
        steps {
-         withCredentials([usernamePassword(credentialsId: 'Docker-Hub', passwordVariable: 'dockerHubPassword', usernameVariable: 'chinmaysalkar99')]) {                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-   }  
+         withCredentials([usernamePassword(credentialsId: 'docker-hub-cred', passwordVariable: 'dockerHubPassword', usernameVariable: 'chimaysalkar99')]) {           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          }  
              }
          }
 
      stage('Push Image to DockerHub') {
        steps {
-         sh 'docker push chinmaysalkar99/insurance-project:latest'
+         sh 'docker push chimaysalkar99/insurance-project:latest'
             }
         }
