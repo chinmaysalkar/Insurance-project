@@ -42,5 +42,3 @@ pipeline {
          sh 'docker push chinmaysalkar99/insurance-project:latest'
             }
         }
-    }
-}
