@@ -37,7 +37,6 @@ pipeline {
         }  
              }
          }
-
      stage('Push Image to DockerHub') {
        steps {
          sh 'docker push chimaysalkar99/insurance-project:latest'
